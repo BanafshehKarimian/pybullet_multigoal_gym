@@ -7,7 +7,7 @@ class KukaBlockStackEnv(KukaBulletMultiBlockEnv):
     def __init__(self, render=True, binary_reward=True, distance_threshold=0.05, random_order=True,
                  image_observation=False, goal_image=False, depth_image=False, visualize_target=True,
                  camera_setup=None, observation_cam_id=0, goal_cam_id=0,
-                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=5, joint_control=False,
+                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=3, joint_control=False,
                  task_decomposition=False, use_curriculum=False, num_goals_to_generate=1e5):
 
         self.grip_informed_goal = grip_informed_goal
@@ -152,7 +152,7 @@ class KukaBlockRearrangeEnv(KukaBulletMultiBlockEnv):
     def __init__(self, render=True, binary_reward=True, distance_threshold=0.05,
                  image_observation=False, goal_image=False, depth_image=False, visualize_target=True,
                  camera_setup=None, observation_cam_id=0, goal_cam_id=0,
-                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=5, joint_control=False,
+                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=3, joint_control=False,
                  task_decomposition=False, use_curriculum=False, num_goals_to_generate=1e5):
 
         assert not grip_informed_goal, "Block rearranging task does not support gripper informed goal representation."
@@ -231,7 +231,7 @@ class KukaChestPickAndPlaceEnv(KukaBulletMultiBlockEnv):
     def __init__(self, render=True, binary_reward=True, distance_threshold=0.05,
                  image_observation=False, goal_image=False, depth_image=False, visualize_target=True,
                  camera_setup=None, observation_cam_id=0, goal_cam_id=0,
-                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=5, joint_control=False,
+                 gripper_type='parallel_jaw', grip_informed_goal=False, num_block=3, joint_control=False,
                  task_decomposition=False, use_curriculum=False, num_goals_to_generate=1e5):
 
         assert not goal_image, "Chest tasks do not support goal images well at the moment."
@@ -381,7 +381,7 @@ class KukaChestPushEnv(KukaBulletMultiBlockEnv):
     def __init__(self, render=True, binary_reward=True, distance_threshold=0.05, grip_informed_goal=False,
                  image_observation=False, goal_image=False, depth_image=False, visualize_target=True,
                  camera_setup=None, observation_cam_id=0, goal_cam_id=0,
-                 gripper_type='parallel_jaw', num_block=5, joint_control=False,
+                 gripper_type='parallel_jaw', num_block=3, joint_control=False,
                  task_decomposition=False, use_curriculum=False, num_goals_to_generate=1e5):
 
         assert not goal_image, "Chest tasks do not support goal images well at the moment."
