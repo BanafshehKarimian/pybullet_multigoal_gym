@@ -215,7 +215,7 @@ class KukaBulletMGEnv(BaseBulletMGEnv):
             state = np.concatenate((joint_poses, state))
             policy_state = np.concatenate((joint_poses, policy_state))
 
-        obs_dict = {'observation': state.copy(),
+        obs_dict = {'state': state.copy(),
                     'policy_state': policy_state.copy(),
                     'achieved_goal': achieved_goal.copy(),
                     'desired_goal': self.desired_goal.copy()}
@@ -223,7 +223,7 @@ class KukaBulletMGEnv(BaseBulletMGEnv):
             images = []
             for cam_id in self.observation_cam_id:
                 images.append(self.render(mode=self.render_mode, camera_id=cam_id))
-            obs_dict['observation'] = images[0].copy()
+            obs_dict['state'] = images[0].copy()
             obs_dict['images'] = images
             obs_dict.update({'state': state.copy()})
             if self.goal_image:
