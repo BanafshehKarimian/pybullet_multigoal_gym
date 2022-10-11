@@ -178,7 +178,7 @@ class KukaBulletInsertionEnv(BaseBulletMGEnv):
         assert achieved_goal.shape == self.desired_goal.shape
 
         obs_dict = {
-            'observation': state.copy(),
+            'state': state.copy(),
             'policy_state': policy_state.copy(),
             'auxiliary_task_state': auxiliary_task_state.copy(),
             'achieved_goal': achieved_goal.copy(),
@@ -190,7 +190,7 @@ class KukaBulletInsertionEnv(BaseBulletMGEnv):
             images = []
             for cam_id in self.observation_cam_id:
                 images.append(self.render(mode=self.render_mode, camera_id=cam_id))
-            obs_dict['observation'] = images[0].copy()
+            obs_dict['state'] = images[0].copy()
             obs_dict['images'] = images
             obs_dict.update({'state': state.copy()})
 
